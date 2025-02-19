@@ -15,10 +15,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use(cors());
 app.use(cors({
-    origin: "http://localhost:3000",  // Allow frontend to access backend
-    methods: ["GET", "POST"],         // Allowed request methods
-    allowedHeaders: ["Content-Type"], // Allowed headers
-    credentials: true                 // Allow cookies if needed
+    origin: "*", 
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: ["Content-Type"],
+    credentials: true        
 }));
 
 require("./config/database").connect();
